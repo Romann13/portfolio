@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projets — CASANOVA Romann</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="window">
+      <div class="titlebar">
+        <div class="dots" aria-hidden="true">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        </div>
+        <div class="path"><strong>romann@portfolio</strong>:~$ ls ./projets</div>
+      </div>
+
+      <div class="content">
+        <div class="card">
+          <h1 class="h1">Projets</h1>
+
+
+          <div class="hr"></div>
+          <div id="bubbles" class="bubbles" aria-label="Liste de projets"></div>
+
+          <div class="nav" style="margin-top:14px;">
+  <a class="btn" data-nav href="index.html">Accueil <kbd>home</kbd></a>
+  <a class="btn" data-nav href="projets.html">Projets <kbd>ls</kbd></a>
+  <a class="btn" data-nav href="competences.html">Compétences <kbd>skills</kbd></a>
+  <a class="btn" data-nav href="contact.html">Contact <kbd>ping</kbd></a>
+  <a class="btn" data-nav href="a-propos.html">À propos <kbd>whoami</kbd></a>
+  <a class="btn" data-nav href="cv.html">CV <kbd>pdf</kbd></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-label="Détails du projet">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="t" id="mTitle">Projet</div>
+        <button class="x" id="mClose" type="button">Fermer</button>
+      </div>
+      <div class="modal-body">
+        <div class="small" id="mSub"></div>
+        <div class="hr"></div>
+        <p class="p" id="mDesc"></p>
+        <div class="pills" id="mTech"></div>
+        <div class="hr"></div>
+        <div id="mLinks" class="nav" style="margin-top:0;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/app.js"></script>
+  <script src="assets/projets.js"></script>
+  <script>
+    const bubbles = document.getElementById("bubbles");
+    const backdrop = document.getElementById("modalBackdrop");
+    const mTitle = document.getElementById("mTitle");
+    const mSub = document.getElementById("mSub");
+    const mDesc = document.getElementById("mDesc");
+    const mTech = document.getElementById("mTech");
+    const mLinks = document.getElementById("mLinks");
+    const mClose = document.getElementById("mClose");
+
+    function openModal(p){
+      mTitle.textContent = p.titre || "Projet";
+      mSub.textContent = p.sousTitre || "";
+      mDesc.textContent = p.description || "";
+      mTech.innerHTML = "";
+      (p.technos || []).forEach(t => {
+        const el = document.createElement("span");
+        el.className = "pill";
+        el.textContent = t;
+        mTech.appendChild(el);
+      });
+
+      mLinks.innerHTML = "";
+      (p.liens || []).forEach(l => {
+        const a = document.createElement("a");
+        a.className = "btn";
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.href = l.url;
+        a.textContent = l.label || "Lien";
+        mLinks.appendChild(a);
+      });
+
+      backdrop.classList.add("open");
+    }
+
+    function closeModal(){ backdrop.classList.remove("open"); }
+
+    mClose.addEventListener("click", closeModal);
+    backdrop.addEventListener("click", (e) => { if (e.target === backdrop) closeModal(); });
+
+    (window.PROJETS || []).forEach((p) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "bubble";
+      b.innerHTML = `<div><strong>${p.titre || "Projet"}</strong><span>${p.sousTitre || "Cliquer pour détails"}</span></div>`;
+      b.addEventListener("click", () => openModal(p));
+      bubbles.appendChild(b);
+    });
+  </script>
+</body>
+</html>
