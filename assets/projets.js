@@ -82,5 +82,35 @@ window.PROJETS = [
     "liens": [
       { "label": "Dossier PPP", "url": "./projets/Projet Personnel.pdf" }
     ]
+  },
+  {
+    "titre": "Développement d'une Suite de Détection de Failles",
+    "sousTitre": "Solution Multiplateforme Java, Web & Android",
+    "description": "CONTEXTE & OBJECTIF : Concevoir un écosystème complet capable de détecter automatiquement des vulnérabilités système et de centraliser les résultats pour une consultation en temps réel.\n\nACTIONS : Développement d'un cœur logiciel en Java pour l'analyse, mise en place d'une base de données SQL structurée, création d'un dashboard web responsive et d'une application Android native pour le monitoring mobile.\n\nRÉSULTATS : Un système opérationnel permettant une surveillance hybride et une visualisation immédiate des risques de sécurité sur différents terminaux.\n\nPREUVES : Dossier technique de conception et d'architecture logicielle.",
+    "technos": ["Java", "Android", "SQL", "HTML/CSS", "JavaScript", "Développement full-stack"],
+    "liens": [
+      { "label": "Dossier Technique", "url": "./projets/Programation_faille_site.pdf" }
+    ]
+  },
+  {
+    "titre": "Ingénierie des Systèmes de Diffusion TV",
+    "sousTitre": "Expertise Transmission Satellite & Terrestre",
+    "description": "CONTEXTE & OBJECTIF : Analyser et valider les chaînes de traitement du signal pour la diffusion télévisuelle numérique (DVB-S et DVB-T).\n\nACTIONS : Étude approfondie du codage de canal (Reed-Solomon, Viterbi), simulation de modulations QPSK et OFDM, et réalisation de mesures de performance (BER, robustesse au bruit) en environnement de test.\n\nRÉSULTATS : Compréhension experte des normes de diffusion et validation de la résistance des signaux face aux interférences et aux trajets multiples.\n\nPREUVES : Rapport d'expertise en systèmes de transmission.",
+    "technos": ["Télécoms", "Traitement du Signal", "DVB-S/T", "Modulations RF"],
+    "liens": [
+      { "label": "Rapport Transmission", "url": "./projets/SAE 31-Transmissions.pdf" }
+    ]
+  },
+  {
+    "titre": "Plateforme d'Audit de Sécurité Web",
+    "sousTitre": "Conception et Automatisation 'Detector Ship'",
+    "description": "CONTEXTE & OBJECTIF : Créer une solution logicielle professionnelle capable d'automatiser l'audit de sécurité de cibles web, d'évaluer les risques et de générer des rapports d'expertise.\n\nACTIONS : Développement d'un orchestrateur pilotant plusieurs scanners (énumération, failles système, dépendances vulnérables), conception d'une base de données SQLite pour la traçabilité des preuves, et création d'un algorithme de notation de sévérité basé sur des critères industriels.\n\nRÉSULTATS : Un outil opérationnel permettant de passer de la détection brute à un livrable client structuré (PDF/HTML/JSON) incluant une vue exécutive, une cartographie des risques et un plan de remédiation.\n\nPREUVES : Mini-rapport technique, support de présentation et code source complet.",
+    "technos": ["Python", "SQLite", "Sécurité Web", "Reporting Automatisé", "Analyse de Vulnérabilités"],
+    "liens": [
+      { "label": "Rapport Technique", "url": "./projets/mini-rapport-technique-detaille.pdf" },
+      { "label": "Présentation Solution", "url": "./projets/SAE_Audit_Premium.pptx.pdf" },
+      { "label": "Exemple d'Audit", "url": "./projets/rapport-audit-spagetos.github.io-5.pdf" },
+      { "label": "Code Source (Google Drive)", "url": "https://drive.google.com/file/d/1ZDUhFmLyYdEExt0Ba2kVHQSJpy5BnLLJ/view?usp=sharing" }
+    ]
   }
 ];
