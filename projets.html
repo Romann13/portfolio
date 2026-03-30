@@ -70,6 +70,7 @@
     function openModal(p){
       mTitle.textContent = p.titre || "Projet";
       mSub.textContent = p.sousTitre || "";
+      mDesc.style.whiteSpace = "pre-line"; // Respecte les sauts de ligne
       mDesc.textContent = p.description || "";
       mTech.innerHTML = "";
       (p.technos || []).forEach(t => {
