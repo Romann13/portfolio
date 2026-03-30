@@ -208,3 +208,16 @@ input, textarea{
   font-family:var(--mono);
 }
 label{ display:block; }
+
+.about-images {
+display: flex;
+gap: 10px;
+margin-top: 15px;
+}
+
+.about-images img {
+width: 100%;
+max-width: 150px;
+border-radius: 10px;
+object-fit: cover;
+}
