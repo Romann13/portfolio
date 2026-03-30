@@ -110,7 +110,7 @@ window.PROJETS = [
       { "label": "Rapport Technique", "url": "./projets/mini-rapport-technique-detaille.pdf" },
       { "label": "Présentation Solution", "url": "./projets/SAE_Audit_Premium.pptx.pdf" },
       { "label": "Exemple d'Audit", "url": "./projets/rapport-audit-spagetos.github.io-5.pdf" },
-      { "label": "Code Source (Service Smash)", "url": "https://fromsmash.com/MXlyZ9LCeE-ct" }
+      { "label": "Code Source", "url": "https://fromsmash.com/MXlyZ9LCeE-ct" }
     ]
   }
 ];

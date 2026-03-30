@@ -126,25 +126,7 @@ transform: scale(1.5);
 .list{ margin: 0; padding-left: 18px; color: var(--text); opacity:.95; line-height:1.6; }
 .section-title{ margin: 0 0 10px; font-size: 16px; color: var(--accent); }
 
-/* Projets: bulles */
-.bubbles{ display:flex; flex-wrap:wrap; gap: 12px; }
-.bubble{
-  width: 170px; height: 170px;
-  border-radius: 999px;
-  border: 1px solid rgba(76,255,122,.30);
-  background: radial-gradient(circle at 30% 25%, rgba(76,255,122,.14), rgba(0,0,0,.25) 55%);
-  display:flex; align-items:center; justify-content:center;
-  text-align:center; padding: 14px;
-  cursor:pointer;
-  transition: transform .1s ease, border-color .15s ease, background .15s ease;
-}
-.bubble:hover{
-  transform: translateY(-2px);
-  border-color: rgba(76,255,122,.55);
-  background: radial-gradient(circle at 30% 25%, rgba(76,255,122,.18), rgba(0,0,0,.25) 58%);
-}
-.bubble strong{ color: var(--text); font-size: 13px; }
-.bubble span{ display:block; margin-top: 6px; color: var(--muted); font-size: 11px; }
+
 
 /* Modal */
 .modal-backdrop{
@@ -220,4 +202,103 @@ width: 100%;
 max-width: 150px;
 border-radius: 10px;
 object-fit: cover;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.list li {
+  margin-bottom: 8px;
+  list-style: none;
+  position: relative;
+  padding-left: 15px;
+}
+
+.list li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.list li strong {
+  color: var(--text);
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 5px 15px;
+    margin-right: 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.bubbles { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px; 
+  justify-content: center; /* Centre les bulles dans la page */
+  margin-top: 20px;
+}
+
+.bubble {
+  width: 180px; 
+  height: 180px;
+  border-radius: 50%; /* Force la forme circulaire */
+  border: 1px solid rgba(76, 255, 122, 0.30);
+  background: radial-gradient(circle at 30% 25%, rgba(76, 255, 122, 0.12), rgba(0, 0, 0, 0.4) 70%);
+  
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  
+  text-align: center; 
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Empêche le texte de dépasser de la bulle */
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.bubble:hover {
+  transform: scale(1.1) translateY(-5px); /* Effet de zoom et soulèvement */
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--shadow);
+  background: radial-gradient(circle at 30% 25%, rgba(76, 255, 122, 0.2), rgba(0, 0, 0, 0.3) 60%);
+}
+
+.bubble strong { 
+  color: var(--text); 
+  font-size: 13px; 
+  line-height: 1.2;
+  display: block;
+}
+
+.bubble span { 
+  display: block; 
+  margin-top: 8px; 
+  color: var(--muted); 
+  font-size: 10px; 
+  opacity: 0.8;
 }
